@@ -1,6 +1,6 @@
 name: TutorialTest01Plugin
 description: Running a test of the tutorial
-version: '0.01.01'
+version: '0.01.02'
 main: org.hexagonalmagmacube.tutorialtest01.TutorialTest01Plugin
 api-version: 1.16
 author: Oak Table

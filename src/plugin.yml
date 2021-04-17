@@ -1,7 +1,7 @@
-name: TutorialTest01Plugin
-description: Running a test of the tutorial
-version: '0.01.02'
-main: org.hexagonalmagmacube.tutorialtest01.TutorialTest01Plugin
+name: {YourPluginName}Plugin
+description: Describe your plugin
+version: '0.01.03'
+main: org.hexagonalmagmacube.tutorialtest01.{YourPluginName}Plugin
 api-version: 1.16
 author: Oak Table
 startup: postworld

@@ -1,10 +1,10 @@
-package org.hexagonalmagmacube.tutorialtest01;
+package org.hexagonalmagmacube.{yourpluginname};
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class TutorialTest01Plugin extends JavaPlugin {
-    private static final String PLUGIN_NAME = "TutorialTest01";
+public class {YourPluginName}Plugin extends JavaPlugin {
+    private static final String PLUGIN_NAME = "{YourPluginName}";
     private boolean compatible;
 
     @Override

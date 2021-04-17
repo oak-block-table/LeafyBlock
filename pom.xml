@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.hexagonalmagmacube</groupId>
-    <artifactId>TestEmptyProject01</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <artifactId>{YourPluginName}</artifactId>
+    <version>0.01-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

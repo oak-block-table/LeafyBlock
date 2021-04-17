@@ -1,0 +1,9 @@
+name: TutorialTest01Plugin
+description: Running a test of the tutorial
+version: '0.01.01'
+main: org.hexagonalmagmacube.tutorialtest01.TutorialTest01Plugin
+api-version: 1.16
+author: Oak Table
+startup: postworld
+
+commands:

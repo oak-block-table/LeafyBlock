@@ -1,9 +1,0 @@
-name: {YourPluginName}Plugin
-description: Describe your plugin
-version: '0.01.03'
-main: org.hexagonalmagmacube.tutorialtest01.{YourPluginName}Plugin
-api-version: 1.16
-author: Oak Table
-startup: postworld
-
-commands:

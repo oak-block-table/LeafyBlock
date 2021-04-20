@@ -3,6 +3,8 @@ package org.hexagonalmagmacube.{yourpluginname};
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class {YourPluginName}Plugin extends JavaPlugin {
     private static final String PLUGIN_NAME = "{YourPluginName}";
     private boolean compatible;

@@ -5,12 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.hexagonalmagmacube</groupId>
-    <artifactId>{YourPluginName}</artifactId>
+    <artifactId>LeafyBlock</artifactId>
     <version>0.01-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <spigot.version>1.17-R0.1-SNAPSHOT</spigot.version>
     </properties>

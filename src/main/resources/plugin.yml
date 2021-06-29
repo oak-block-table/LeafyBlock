@@ -1,7 +1,7 @@
-name: {YourPluginName}Plugin
-description: {Describe your plugin}
-version: '0.01.04'
-main: org.hexagonalmagmacube.{yourpluginname}.{YourPluginName}Plugin
+name: LeafyBlockPlugin
+description: Drops randoms items
+version: '0.01.05'
+main: org.hexagonalmagmacube.LeafyBlock.LeafyBlockPlugin
 api-version: 1.16
 author: Oak Table
 startup: postworld

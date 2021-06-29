@@ -1,12 +1,12 @@
-package org.hexagonalmagmacube.{yourpluginname};
+package org.hexagonalmagmacube.LeafyBlock;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static org.bukkit.Bukkit.getLogger;
 
-public class {YourPluginName}Plugin extends JavaPlugin {
-    private static final String PLUGIN_NAME = "{YourPluginName}";
+public class LeafyBlockPlugin extends JavaPlugin {
+    private static final String PLUGIN_NAME = "LeafyBlock";
     private boolean compatible;
 
     @Override

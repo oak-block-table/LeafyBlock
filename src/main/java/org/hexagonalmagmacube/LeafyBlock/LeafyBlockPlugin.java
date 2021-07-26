@@ -3,11 +3,11 @@ package org.hexagonalmagmacube.LeafyBlock;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import static org.bukkit.Bukkit.getLogger;
-
 public class LeafyBlockPlugin extends JavaPlugin {
     private static final String PLUGIN_NAME = "LeafyBlock";
     private boolean compatible;
+
+    LeavesBlockBreakEventListener breakEventListener;
 
     @Override
     public void onDisable() {
@@ -30,6 +30,9 @@ public class LeafyBlockPlugin extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
+
+        this.breakEventListener = new LeavesBlockBreakEventListener();
+        this.getServer().getPluginManager().registerEvents(this.breakEventListener, this);
 
         getLogger().info(PLUGIN_NAME + " has Started");
     }

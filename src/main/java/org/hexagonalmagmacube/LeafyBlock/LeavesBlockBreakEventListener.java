@@ -2,6 +2,7 @@ package org.hexagonalmagmacube.LeafyBlock;
 
 import java.util.Random;
 
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -14,7 +15,17 @@ public class LeavesBlockBreakEventListener implements Listener {
 
     @EventHandler
     public void onEvent(BlockBreakEvent event) {
-        int dieRoll = rand.nextInt(9);
+        int dieRoll = rand.nextInt(20);
+        if (dieRoll == 0) {
+            Player player = event.getPlayer();
+            getServer().broadcastMessage(String.format("Natural 0. {} dies.", player.getDisplayName()));
+            player.setHealth(0);
+            event.getPlayer().kickPlayer("Natural zero.");
+        }
+        if (dieRoll == 20) {
+            getServer().broadcastMessage(String.format("Twenty is awesome.", dieRoll));
+        }
+
         if (dieRoll % 2 == 1) {
             getServer().broadcastMessage(String.format("%d rolled. Good event,", dieRoll));
         }

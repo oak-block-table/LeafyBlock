@@ -1,6 +1,6 @@
 name: LeafyBlockPlugin
 description: Drops randoms items
-version: '0.01.08'
+version: '0.01.09'
 main: org.hexagonalmagmacube.LeafyBlock.LeafyBlockPlugin
 api-version: 1.16
 author: Oak Table

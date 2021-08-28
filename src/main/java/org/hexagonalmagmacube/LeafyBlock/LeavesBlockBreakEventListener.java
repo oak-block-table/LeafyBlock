@@ -12,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
+import static org.bukkit.Bukkit.getLogger;
 import static org.bukkit.Bukkit.getServer;
 
 public class LeavesBlockBreakEventListener implements Listener {
@@ -36,22 +37,32 @@ public class LeavesBlockBreakEventListener implements Listener {
                 tnt.setFuseTicks(80);
                 return;
             }
-            if (dieRoll == 20) {
-                getServer().broadcastMessage(String.format("Twenty is awesome.", dieRoll));
+
+            if (dieRoll == 1) {
+                // We need to cancel the original event so that Minecraft will
+                // not break the new Fire block that we place
+                event.setCancelled(true);
+                Location blockLocation = event.getBlock().getLocation();
+                String message = String.format("Roll=%d.  Set fire at (%.1f, %.1f, %.1f)",
+                        dieRoll, blockLocation.getX(), blockLocation.getY(), blockLocation.getZ());
+                player.sendMessage(message);
+                getLogger().info(message);
+                player.getWorld().getBlockAt(blockLocation).setType(Material.FIRE);
                 return;
             }
 
             if (dieRoll == 18) {
-                player.sendMessage(String.format("Roll=%d.  Drop a diamond.", dieRoll));
+                String message = String.format("Roll=%d.  Drop a diamond.", dieRoll);
+                player.sendMessage(message);
+                getLogger().info(message);
                 Location blockLocation = event.getBlock().getLocation().add(0.5, 0.5, 0.5);
                 ItemStack itemToDrop = new ItemStack(Material.DIAMOND, 1);
                 player.getWorld().dropItemNaturally(blockLocation, itemToDrop);
                 return;
             }
 
-            if (dieRoll <= 17) {
-                // player.sendMessage(String.format("Roll=%d.  Fire.", dieRoll));
-                // event.getBlock().setType(Material.FIRE);
+            if (dieRoll == 20) {
+                getServer().broadcastMessage(String.format("Twenty is awesome.", dieRoll));
                 return;
             }
 

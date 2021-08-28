@@ -2,6 +2,7 @@ package org.hexagonalmagmacube.LeafyBlock;
 
 import java.util.Random;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -28,7 +29,7 @@ public class LeavesBlockBreakEventListener implements Listener {
             int dieRoll = rand.nextInt(20);
             Player player = event.getPlayer();
             if (dieRoll == 0) {
-                getServer().broadcastMessage(String.format("Natural 0. Watch out %s.", player.getDisplayName()));
+                getServer().broadcastMessage(String.format("Roll=%d. Watch out %s.", dieRoll, player.getDisplayName()));
                 // player.setHealth(0);
                 // event.getPlayer().kickPlayer("Natural zero.");
                 TNTPrimed tnt = player.getWorld().spawn(player.getLocation(), TNTPrimed.class);
@@ -41,9 +42,16 @@ public class LeavesBlockBreakEventListener implements Listener {
             }
 
             if (dieRoll == 18) {
-                Block block = event.getBlock();
-                player.sendMessage(String.format("Drop a diamond.", dieRoll));
-                //player.getWorld().dropItemNaturally(new ItemStack());
+                player.sendMessage(String.format("Roll=%d.  Drop a diamond.", dieRoll));
+                Location blockLocation = event.getBlock().getLocation().add(0.5, 0.5, 0.5);
+                ItemStack itemToDrop = new ItemStack(Material.DIAMOND, 1);
+                player.getWorld().dropItemNaturally(blockLocation, itemToDrop);
+                return;
+            }
+
+            if (dieRoll <= 17) {
+                // player.sendMessage(String.format("Roll=%d.  Fire.", dieRoll));
+                // event.getBlock().setType(Material.FIRE);
                 return;
             }
 

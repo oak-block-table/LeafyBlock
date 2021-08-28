@@ -51,6 +51,29 @@ public class LeavesBlockBreakEventListener implements Listener {
                 return;
             }
 
+            if (dieRoll == 16) {
+                String message = String.format("Roll=%d.  Apple.", dieRoll);
+                player.sendMessage(message);
+                getLogger().info(message);
+                Location blockLocation = event.getBlock().getLocation().add(0.5, 0.5, 0.5);
+                ItemStack itemToDrop = new ItemStack(Material.APPLE, 1);
+                if (rand.nextInt(3) == 0) {
+                    itemToDrop = new ItemStack(Material.GOLDEN_APPLE, 1);
+                }
+                player.getWorld().dropItemNaturally(blockLocation, itemToDrop);
+                return;
+            }
+
+            if (dieRoll == 17) {
+                String message = String.format("Roll=%d.  Potatoes.", dieRoll);
+                player.sendMessage(message);
+                getLogger().info(message);
+                Location blockLocation = event.getBlock().getLocation().add(0.5, 0.5, 0.5);
+                ItemStack itemToDrop = new ItemStack(Material.POTATO, 2);
+                player.getWorld().dropItemNaturally(blockLocation, itemToDrop);
+                return;
+            }
+
             if (dieRoll == 18) {
                 String message = String.format("Roll=%d.  Drop a diamond.", dieRoll);
                 player.sendMessage(message);
